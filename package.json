@@ -23,7 +23,10 @@
     "react-native-screens": "^2.18.1",
     "react-native-vector-icons": "^8.1.0",
     "react-native-web": "~0.13.12",
-    "yup": "^0.32.9"
+    "yup": "^0.32.9",
+    "axios": "^0.21.1",
+    "react-native-deck-swiper": "^2.0.5",
+    "react-native-view-overflow": "^0.0.5"
   },
   "devDependencies": {
     "@babel/core": "^7.9.0"

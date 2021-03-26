@@ -18,7 +18,7 @@ const Auth = ({ navigation }) => {
         };
         const isValid = await userSchema.isValid(form);
         setIsValid(isValid);
-        isValid && navigation.navigate('Home',{email});
+        isValid && navigation.navigate('Home');
     };
 
     return (
