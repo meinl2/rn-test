@@ -3,7 +3,7 @@ import { StyleSheet, View } from 'react-native';
 import Heading from "../components/Heading";
 
 
-const Home = () => {
+const Home = ({navigation}) => {
 
     return (
         <View style={styles.container}>
@@ -17,7 +17,7 @@ const styles = StyleSheet.create({
     container: {
         paddingHorizontal:25,
         flex:1,
-        paddingTop:150,
+        paddingTop:50,
         alignItems:'center'
     },
     heading: {

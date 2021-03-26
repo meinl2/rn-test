@@ -6,7 +6,7 @@ import FilledButton from "../components/FilledButton";
 import ErrorText from "../components/ErrorText";
 import {userSchema} from "../Validations/UserValidation";
 
-const Auth = () => {
+const Auth = ({ navigation }) => {
     const [email, setEmail] = useState('');
     const [isValid, setIsValid] = useState(true);
 
@@ -18,6 +18,7 @@ const Auth = () => {
         };
         const isValid = await userSchema.isValid(form);
         setIsValid(isValid);
+        isValid && navigation.navigate('Home',{email});
     };
 
     return (
