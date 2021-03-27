@@ -1,30 +1,33 @@
 import React from 'react';
-import { StyleSheet, View } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
-import Auth from "./src/screens/Auth";
-import Home from "./src/screens/Home";
+import {StyleSheet} from 'react-native';
+import {NavigationContainer} from '@react-navigation/native';
+import {createStackNavigator} from '@react-navigation/stack';
+import AuthScreen from "./src/screens/AuthScreen";
+import SwiperScreen from "./src/screens/SwiperScreen";
+import TotalScreen from "./src/screens/TotalScreen";
 
 const Stack = createStackNavigator();
 
 export default function App() {
-  return (
-      <NavigationContainer>
-        <Stack.Navigator screenOptions={{
-          headerShown:false
-        }}>
-          <Stack.Screen name="Auth" component={Auth}/>
-          <Stack.Screen name="Home" component={Home} />
-        </Stack.Navigator>
-      </NavigationContainer>
-  );
+    return (
+        <NavigationContainer>
+            <Stack.Navigator
+                screenOptions={{
+                headerShown: false,
+            }}>
+                <Stack.Screen options={{gestureEnabled: false}} name="Auth" component={AuthScreen}/>
+                <Stack.Screen  name="Swiper" component={SwiperScreen}/>
+                <Stack.Screen  name="Total" component={TotalScreen}/>
+            </Stack.Navigator>
+        </NavigationContainer>
+    );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
+    container: {
+        flex: 1,
+        backgroundColor: '#fff',
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
 });
