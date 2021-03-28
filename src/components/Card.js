@@ -1,8 +1,8 @@
 import React from 'react';
 import {StyleSheet, Image, View} from 'react-native';
+import PropTypes from "prop-types";
 
 const Card = ({url}) => {
-
     return (
         <View style={styles.card}>
             <Image source={{url}} style={styles.cardImage}/>
@@ -10,13 +10,12 @@ const Card = ({url}) => {
     );
 };
 
-
 const styles = StyleSheet.create({
     card: {
         flex: 0.5,
         padding: 20,
-        paddingTop:70,
-        paddingBottom:70,
+        paddingTop: 70,
+        paddingBottom: 70,
         borderRadius: 10,
         shadowRadius: 20,
         shadowColor: '#000',
@@ -31,5 +30,8 @@ const styles = StyleSheet.create({
     }
 });
 
+Card.propType = {
+    url: PropTypes.string.isRequired
+};
 
 export default Card;

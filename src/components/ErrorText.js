@@ -3,7 +3,6 @@ import {StyleSheet, Text, View} from 'react-native';
 import Colors from "../constans/Colors";
 import PropTypes from "prop-types";
 
-
 const ErrorText = ({error}) => {
     return (
         <View style={styles.container}>
@@ -13,17 +12,10 @@ const ErrorText = ({error}) => {
 };
 
 
-ErrorText.propType = {
-    error: PropTypes.string
-};
-
-ErrorText.defaultProps = {
-    error: 'Something went wrong ^('
-};
-
 const styles = StyleSheet.create({
     text: {
-        fontSize: 14,
+        fontSize: 15,
+        fontWeight: 'bold',
         color: Colors.ERROR
     },
     container: {
@@ -31,6 +23,14 @@ const styles = StyleSheet.create({
         height: 20
     }
 });
+
+ErrorText.propType = {
+    error: PropTypes.string
+};
+
+ErrorText.defaultProps = {
+    error: 'Something went wrong :('
+};
 
 
 export default ErrorText;

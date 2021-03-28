@@ -1,6 +1,6 @@
 export default {
-    BLACK:'#000000',
-    ERROR:'#de1842',
+    ERROR:'#e61873',
+    SUCCESS:'#94c11f',
     SECONDARY:'#808080',
     BRAND:'#662483'
 }

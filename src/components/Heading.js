@@ -13,8 +13,8 @@ const Heading = ({children, props, style}) => {
 
 const styles = StyleSheet.create({
     text: {
-        paddingTop:50,
-        paddingBottom:50,
+        paddingTop: 50,
+        paddingBottom: 50,
         fontSize: 35,
         textTransform: 'uppercase',
         color: Colors.SECONDARY

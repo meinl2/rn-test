@@ -1,8 +1,17 @@
 import React from 'react';
 import {ActivityIndicator} from 'react-native';
-import Colors from "../constans/Colors";
+import PropTypes from "prop-types";
+import ErrorText from "./ErrorText";
 
 
-export const Loader = ({style}) => <ActivityIndicator style={style} size="large" color={Colors.BRAND}/>;
+export const Loader = ({style, color}) => <ActivityIndicator style={style} size="large" color={color}/>;
+
+ErrorText.propType = {
+    color: PropTypes.string
+};
+
+
+
+
 
 

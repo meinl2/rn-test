@@ -2,21 +2,16 @@ import React, {useEffect, useState} from 'react';
 import {StyleSheet, View} from 'react-native';
 import Heading from "../components/Heading";
 import Emoji from 'react-native-emoji';
-import Colors from "../constans/Colors";
 import Card from "../components/Card";
 import Swiper from "react-native-deck-swiper";
 import {Loader} from "../components/Loader";
+import {getRandom} from "../lib/random";
+import Colors from "../constans/Colors";
+import {swiperConfig} from "../configs/swiperConfig";
 
-
-function getRandom(min, max) {
-    min = Math.ceil(min);
-    max = Math.floor(max);
-    return Math.floor(Math.random() * (max - min)) + min;
-}
 
 const SwiperScreen = ({navigation}) => {
-    const swipeLimit = 20;
-    const cardLimit = 60;
+    const {swipeLimit, cardLimit} = swiperConfig;
     const [data, setData] = useState([]);
     const [countSwipedRight, setCountSwipedRight] = useState(0);
     const [countSwipedLeft, setCountSwipedLeft] = useState(0);
@@ -32,10 +27,10 @@ const SwiperScreen = ({navigation}) => {
         getData();
     }, []);
 
-    useEffect(()=>{
+    useEffect(() => {
         const count = countSwipedRight + countSwipedLeft;
-        count!== 0 && (count % swipeLimit === 0)  && goToTotal(count);
-    },[countSwipedRight,countSwipedLeft]);
+        count !== 0 && (count % swipeLimit === 0) && goToTotal(count);
+    }, [countSwipedRight, countSwipedLeft]);
 
 
     const goToTotal = (count) => {
@@ -47,11 +42,11 @@ const SwiperScreen = ({navigation}) => {
     };
 
     const onSwipedRight = () => {
-         setCountSwipedRight(prev => prev + 1);
+        setCountSwipedRight(prev => prev + 1);
     };
 
     const onSwipedLeft = () => {
-         setCountSwipedLeft(prev => prev + 1);
+        setCountSwipedLeft(prev => prev + 1);
     };
 
     return (
@@ -59,7 +54,7 @@ const SwiperScreen = ({navigation}) => {
             <Heading style={styles.heading}>Swiper</Heading>
             {!data.length
                 ?
-                <Loader style={styles.loader}/>
+                <Loader color={Colors.BRAND} style={styles.loader}/>
                 :
                 <View style={styles.swiperContainer}>
                     <Swiper
