@@ -1,4 +1,4 @@
 export const swiperConfig = {
     swipeLimit: 20,
-    cardLimit: 60
+    cardLimit: 40
 };

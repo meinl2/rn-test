@@ -7,11 +7,8 @@ npm-debug.*
 *.key
 *.mobileprovision
 *.orig.*
-# IntellijIdea files
-*.iml
-.idea
-out
 web-build/
+.idea/
 
 # macOS
 .DS_Store

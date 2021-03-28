@@ -13,9 +13,8 @@ const Card = ({url}) => {
 const styles = StyleSheet.create({
     card: {
         flex: 0.5,
-        padding: 20,
-        paddingTop: 70,
-        paddingBottom: 70,
+        paddingHorizontal: 20,
+        paddingVertical:70,
         borderRadius: 10,
         shadowRadius: 20,
         shadowColor: '#000',

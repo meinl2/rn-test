@@ -28,10 +28,13 @@ const SwiperScreen = ({navigation}) => {
     }, []);
 
     useEffect(() => {
-        const count = countSwipedRight + countSwipedLeft;
-        count !== 0 && (count % swipeLimit === 0) && goToTotal(count);
+        checkLimit();
     }, [countSwipedRight, countSwipedLeft]);
 
+    const checkLimit = () => {
+        const count = countSwipedRight + countSwipedLeft;
+        count !== 0 && (count % swipeLimit === 0) && goToTotal(count);
+    };
 
     const goToTotal = (count) => {
         navigation.navigate('Total', {
@@ -71,7 +74,7 @@ const SwiperScreen = ({navigation}) => {
                         stackSeparation={10}
                         overlayLabels={{
                             left: {
-                                element: <Emoji name="cry" style={{fontSize: 100}}/>,
+                                element: <Emoji name="cry" style={styles.emoji}/>,
                                 style: {
                                     wrapper: {
                                         alignItems: 'flex-end',
@@ -82,7 +85,7 @@ const SwiperScreen = ({navigation}) => {
                                 }
                             },
                             right: {
-                                element: <Emoji name="heart_eyes" style={{fontSize: 100}}/>,
+                                element: <Emoji name="heart_eyes" style={styles.emoji}/>,
                                 style: {
                                     wrapper: {
                                         alignItems: 'flex-start',
@@ -114,6 +117,9 @@ const styles = StyleSheet.create({
     },
     loader: {
         marginTop: 200
+    },
+    emoji: {
+        fontSize: 100
     }
 });
 
